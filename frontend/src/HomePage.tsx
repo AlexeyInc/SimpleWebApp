@@ -2,7 +2,7 @@ import React from 'react';
 
 /** @jsx jsx */
 import { css, jsx } from '@emotion/core';
-import { PrimaryButton } from './Styles';
+import { PrimaryButton, PageTitle } from './Styles';
 
 import { QuestionList } from './QuestionList';
 import { getUnansweredQuestions, QuestionData } from './QuestionsData';
@@ -10,7 +10,6 @@ import { getUnansweredQuestions, QuestionData } from './QuestionsData';
 import { useEffect, useState } from 'react';
 
 import { Page } from './Page';
-import { PageTitle } from './PageTitle';
 
 export const HomePage = () => {
   const [questions, setQuestions] = useState<QuestionData[] | null>(null);

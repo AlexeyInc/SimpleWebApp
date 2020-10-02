@@ -1,5 +1,10 @@
 import React from 'react';
 
+import { BrowserRouter, Route } from 'react-router-dom';
+import { AskPage } from './AskPage';
+import { SearchPage } from './SearchPage';
+import { SignInPage } from './SignInPage';
+
 import { Header } from './Header';
 import { HomePage } from './HomePage';
 
@@ -16,8 +21,16 @@ function App() {
         color: ${gray2};
       `}
     >
-      <Header />
-      <HomePage />
+      <BrowserRouter>
+        <div>
+          <Header />
+          <Route exact path="/" component={HomePage} />
+          <Route path="/search" component={SearchPage} />
+          <Route path="/ask" component={AskPage} />
+          <Route path="/signin" component={SignInPage} />
+          {/* <HomePage /> */}
+        </div>
+      </BrowserRouter>
     </div>
   );
 }

@@ -3,7 +3,7 @@ import { FC } from 'react';
 
 /** @jsx jsx */
 import { css, jsx } from '@emotion/core';
-import { PageTitle } from './PageTitle';
+import { PageTitle } from './Styles';
 
 interface Props {
   title?: string;
