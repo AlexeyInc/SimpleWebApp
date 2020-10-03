@@ -7,11 +7,12 @@ import { PrimaryButton, PageTitle } from './Styles';
 import { QuestionList } from './QuestionList';
 import { getUnansweredQuestions, QuestionData } from './QuestionsData';
 
-import { useEffect, useState } from 'react';
+import { useEffect, useState, FC } from 'react';
+import { RouteComponentProps } from 'react-router-dom';
 
 import { Page } from './Page';
 
-export const HomePage = () => {
+export const HomePage: FC<RouteComponentProps> = ({ history }) => {
   const [questions, setQuestions] = useState<QuestionData[] | null>(null);
   const [questionsLoading, setQuestionsLoading] = useState(true);
 
@@ -25,7 +26,7 @@ export const HomePage = () => {
   }, []);
 
   const handleAskQuestionClick = () => {
-    console.log('TODO - move to the AskPage');
+    history.push('/ask');
   };
 
   return (
