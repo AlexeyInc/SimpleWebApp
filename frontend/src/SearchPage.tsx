@@ -17,6 +17,7 @@ export const SearchPage: FC<RouteComponentProps> = ({ location }) => {
   useEffect(() => {
     const doSearch = async (criteria: string) => {
       const foundResults = await searchQuestions(criteria);
+
       setQuestions(foundResults);
     };
     doSearch(search);
