@@ -11,7 +11,7 @@ import React from 'react';
 export const SearchPage: FC<RouteComponentProps> = ({ location }) => {
   const [questions, setQuestions] = useState<QuestionData[]>([]);
 
-  const searchParams = new URLSearchParams(location.search);
+  const searchParams = new URLSearchParams(location.search); // /search?criteria=type
   const search = searchParams.get('criteria') || '';
 
   useEffect(() => {
