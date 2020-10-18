@@ -1,11 +1,10 @@
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
 import React, { lazy, Suspense } from 'react';
 
 import { BrowserRouter, Route, Redirect, Switch } from 'react-router-dom';
 import { SearchPage } from './SearchPage';
 import { SignInPage } from './SignInPage';
 
-import { HeaderWithRouter as Header } from './Header';
+import { Header } from './Header';
 import { HomePage } from './HomePage';
 import { NotFoundPage } from './NotFoundPage';
 

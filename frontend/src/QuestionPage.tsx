@@ -4,9 +4,6 @@ import { RouteComponentProps } from 'react-router-dom';
 import { QuestionData, getQuestion } from './QuestionsData';
 import { AnswerList } from './AnswerList';
 
-import { Form } from './Form';
-import { Field } from './Field';
-
 /** @jsx jsx */
 import { css, jsx } from '@emotion/core';
 import { gray3, gray6 } from './Styles';
@@ -76,15 +73,6 @@ ${question.created.toLocaleDateString()}
 ${question.created.toLocaleTimeString()}`}
             </div>
             <AnswerList data={question.answers} />
-            <div
-              css={css`
-                margin-top: 20px;
-              `}
-            >
-              <Form submitCaption="Submit Your Answer">
-                <Field name="content" label="Your Answer" type="TextArea" />
-              </Form>
-            </div>
           </Fragment>
         )}
       </div>
