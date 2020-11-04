@@ -48,7 +48,7 @@ export const Header: FC<RouteComponentProps> = ({ history, location }) => {
       >
         Q & A
       </Link>
-      <form>
+      <form onSubmit={handleSearchSubmit}>
         <input
           type="text"
           placeholder="Search..."

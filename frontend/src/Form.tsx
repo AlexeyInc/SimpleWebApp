@@ -93,8 +93,6 @@ export const Form: FC<Props> = ({
       return [];
     }
 
-    // -----
-
     const rules = Array.isArray(validationRules[fieldName])
       ? (validationRules[fieldName] as Validation[])
       : ([validationRules[fieldName]] as Validation[]);
@@ -115,18 +113,11 @@ export const Form: FC<Props> = ({
   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     if (validateForm()) {
-      // set state to indicate submission is in progress
       setSubmitting(true);
       setSubmitError(false);
-
-      // call the consumer submit function
       const result = await onSubmit(values);
-
-      // set any errors in state
       setErrors(result.errors || {});
       setSubmitError(!result.success);
-
-      // set state to indicate submission has finished
       setSubmitting(false);
       setSubmitted(true);
     }
