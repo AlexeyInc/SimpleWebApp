@@ -1,4 +1,4 @@
-import React, { ChangeEvent, FC, useState } from 'react';
+import React, { ChangeEvent, FC, useState, FormEvent } from 'react';
 import { UserIcon } from './Icons';
 /** @jsx jsx */
 import { css, jsx } from '@emotion/core';
@@ -14,7 +14,12 @@ export const Header: FC<RouteComponentProps> = ({ history, location }) => {
 
   const handleSearchInputChange = (e: ChangeEvent<HTMLInputElement>) => {
     setSearch(e.currentTarget.value);
-  }; //
+  };
+
+  const handleSearchSubmit = (e: FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    history.push(`/search?criteria=${search}`);
+  };
 
   return (
     <div
